@@ -19,6 +19,14 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-GL-wwe" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                        <real key="value" value="-9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,6 +37,9 @@
                             <constraint firstItem="N3r-GL-wwe" firstAttribute="top" secondItem="Tsp-0Y-R58" secondAttribute="top" id="SXr-Zm-mzV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="N3r-GL-wwe" id="6zH-fZ-egx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtX-6q-1bN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
