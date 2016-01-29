@@ -23,10 +23,17 @@ class FaceView: UIView {
     }
     
     var faceRadius: CGFloat {
-        return min(bounds.size.width, bounds.size.height) / 2 * 0.90
+        return min(bounds.size.width, bounds.size.height) / 2 * scale
     }
     
-    weak var dataSource: FaceViewDataSource?
+    var dataSource: FaceViewDataSource?
+    
+    func scale(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .Changed {
+            scale *= gesture.scale
+            gesture.scale = 1
+        }
+    }
     
     private struct Scaling {
         static let FaceRadiusToEyeRadiusRatio: CGFloat = 10

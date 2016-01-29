@@ -10,21 +10,24 @@ import UIKit
 
 class HappinessViewController: UIViewController, FaceViewDataSource
 {
+    
     @IBOutlet weak var faceView: FaceView! {
         didSet {
+            println("happiness = \(happiness)")
             faceView.dataSource = self
+            faceView.addGestureRecognizer(UIPinchGestureRecognizer(target: faceView, action: "scale:"))
         }
     }
     
-    var happiness: Int = 10 {
+    var happiness: Int = 75 {
         didSet {
             happiness = min(max(happiness, 0), 100)
             println("happiness = \(happiness)")
-            updateUI()
+            //updateUI()
         }
     }
     
-    func updateUI()
+    private func updateUI()
     {
         faceView.setNeedsDisplay()
     }
